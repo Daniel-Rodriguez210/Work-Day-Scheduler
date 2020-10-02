@@ -30,6 +30,37 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <div id="time-blocks"></div>
+      <script type="text/javascript">
+      var dayList = [
+        "9AM",
+        "10AM",
+        "11M",
+        "12PM",
+        "1PM",
+        "2PM",
+        "3PM",
+        "4PM",
+        "5PM",
+      ];
+
+      var dayDiv = document.getElementById("time-blocks"); // This line grabs the main div ("time-blocks")
+
+      for (var i = 0; i < dayList.length; i++) { // Created a for loop to iterate through all the hours in the list
+
+        var newhourBlock = document.createElement("p"); // Create a new paragraph to hold the text of each loop, a new paragraph will be created with each iteration
+
+        newhourBlock.textContent = dayList[i]; // assign text of array to be used as text of paragraph
+
+        dayDiv.appendChild(newhourBlock); // add the paragraph the main div
+      
+
+      } 
+
+
+
+
+    </script>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
