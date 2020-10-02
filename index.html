@@ -27,29 +27,47 @@
     <div id="time-blocks"></div>
 
     <script type="text/javascript">
-
-      var dayList = [
-        "9AM",
-        "10AM",
-        "11M",
-        "12PM",
-        "1PM",
-        "2PM",
-        "3PM",
-        "4PM",
-        "5PM",
-      ];
-
-      var dayDiv = $("#time-blocks");
-      for (var i = 0; i < dayList.length; i++) {
-        var newHourBlockDiv = $("<p>" + dayList[i] + "</p>");
-        dayDiv.append(newHourBlockDiv);
-      }
+      $(document).ready(function () {
+        var dayList = [
+          "9AM",
+          "10AM",
+          "11M",
+          "12PM",
+          "1PM",
+          "2PM",
+          "3PM",
+          "4PM",
+          "5PM",
+        ];
 
 
 
+        var dayDiv = $("#time-blocks"); // This line grabs the main div ("time-blocks")
+
+        for (var i = 0; i < dayList.length; i++) { // Created a for loop to iterate through all the hours in the list
+          var newHourBlockDiv = $("<p>" + dayList[i] + "</p>"); // Create a new paragraph to hold the text of each loop, a new paragraph will be created with each iteration
+          dayDiv.append(newHourBlockDiv); //add the paragraph the main div
+        }
 
 
+        var buttonsDiv = $("buttons");
+
+        for (var i = 0; i < dayList.length; i++) {
+          var dayListBtn = $("<button>");
+          dayListBtn.attr("class", "dayList dayList-button dayList-button-color");
+          dayListBtn.attr("data-dayList", dayList[i]);
+          dayListBtn.text(dayList[i]);
+          buttonsDiv.append(dayListBtn);
+        }
+
+
+
+
+
+
+
+
+      });
     </script>
   </div>
 
